@@ -21,4 +21,8 @@ router.post('/bulk', function(req, res, next) {
   }
 });
 
+router.get('/', function(req, res, next) {
+res.send("Index");
+});
+
 module.exports = router;
