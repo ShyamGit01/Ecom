@@ -9,16 +9,20 @@ import { ProductInerface }  from './product-inerface';
 })
 export class ProductServiceService {
 
-  productUrl = "http://localhost:3000/product";
+  productUrl = "http://localhost:3000/products";
   catagoryUrl = "http://localhost:3000/categories";
 
   constructor(private httpClient: HttpClient) {   }
 
   createProduct(productBody: any):Observable<ProductInerface>{
-    return this.httpClient.post<ProductInerface>(this.productUrl, productBody);
+    return this.httpClient.post<ProductInerface>(`${this.productUrl}`, productBody);
   }
 
-  viewProduct(productId: any):Observable<ProductInerface>{
+  viewProduct():Observable<ProductInerface>{
+    return this.httpClient.get<ProductInerface>(`${this.productUrl}`);
+  }
+
+  viewSelectProduct(productId: any):Observable<ProductInerface>{
     return this.httpClient.get<ProductInerface>(`${this.productUrl}/${productId}`);
   }
 
@@ -31,7 +35,7 @@ export class ProductServiceService {
   }
 
   searchCatagoryProduct(catagoryId: any):Observable<ProductInerface>{
-    return this.httpClient.get<ProductInerface>(`${this.productUrl}/catagory=${catagoryId}`);
+    return this.httpClient.get<ProductInerface>(`${this.productUrl}/?categoryId=${catagoryId}`);
   }
 
   searchDateProduct(dateParam: any):Observable<ProductInerface>{

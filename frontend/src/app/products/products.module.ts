@@ -10,6 +10,7 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 import { ViewAllProductComponent } from './view-all-product/view-all-product.component';
 import { ViewProductByDateComponent } from './view-product-by-date/view-product-by-date.component';
 import { ViewProductByCatagoryComponent } from './view-product-by-catagory/view-product-by-catagory.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ViewProductByCatagoryComponent } from './view-product-by-catagory/view-
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductsModule { }

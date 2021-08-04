@@ -1,12 +1,12 @@
 <a href="#/products" class="list-group-item" style="background-color:#ffffcc">
   View All Products
 </a>
-<a href="#/products/create-product" class="list-group-item" style="background-color:#ddd">
+<a href="/products/add-product" class="list-group-item" style="background-color:#ddd">
   Add New Product
 </a>
 
-<div class="list-group" *ngFor="let cat of catagoryList">
-  <a href="#/products/category/{{cat.id}}" class="list-group-item" >
-      {{ cat.categoryName }}
+<div class="list-group" *ngFor="let catagory of catagoryList">
+  <a href="view-product-by-catagory/{{catagory.id}}" class="list-group-item" >
+      {{ catagory.categoryName }}
   </a>
 </div>

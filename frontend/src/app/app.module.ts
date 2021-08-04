@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { OrdersModule } from './orders/orders.module';
 import { ProductsModule } from './products/products.module';
 import { SiteLayoutModule } from './site-layout/site-layout.module';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SiteLayoutModule } from './site-layout/site-layout.module';
     ProductsModule,
     SiteLayoutModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
