@@ -1,3 +1,135 @@
-<p>update-product works!</p>
-
-<h2>product id : {{productID}}</h2>
+<h2 class="bg-light mb-2 text-center">Update Product</h2>
+<!-- <form (ngSubmit)="addNewProduct(addProductForm)" #addProductForm="ngForm" style="border: 5px solid #1b0679; padding: 10px;" > -->
+<form
+  [formGroup]="updateProductForm"
+  (ngSubmit)="updateProduct()"
+  style="border: 5px solid #1b0679; padding: 10px"
+>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Product Name</label>
+      <input
+        type="text"
+        class="form-control"
+        value="Enter Product Name"
+        required
+        name="product_name"
+        formControlName="productName"
+        [(ngModel)]="productDetails.productName"
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">Category Id</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        name="product_category"
+        formControlName="categoryId"
+        [(ngModel)]="productDetails.categoryId"
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">Description</label>
+      <textarea
+        type="text"
+        class="form-control"
+        placeholder="Enter Product Description"
+        required
+        name="product_description"
+        formControlName="description"
+        [(ngModel)]="productDetails.description"
+      >
+      </textarea>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Rating</label>
+      <select
+        class="custom-select"
+        required
+        name="product_rating"
+        formControlName="rating"
+        [(ngModel)]="productDetails.rating"
+      >
+        <option selected value="">Choose...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Product Color</label>
+      <input
+        type="text"
+        class="form-control"
+        value="Enter Product Name"
+        required
+        name="product_color"
+        formControlName="color"
+        [(ngModel)]="productDetails.color"
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">Is Avaiable</label>
+      <select
+        class="custom-select"
+        required
+        name="product_available"
+        formControlName="isAvailable"
+        [(ngModel)]="productDetails.isAvailable"
+      >
+        <option selected value="">Choose...</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationServer01">Product Price</label>
+      <input
+        type="text"
+        class="form-control"
+        value="Enter Product Name"
+        required
+        name="product_price"
+        formControlName="price"
+        [(ngModel)]="productDetails.price"
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer02">Reviews</label>
+      <select
+        class="custom-select"
+        required
+        name="product_reviews"
+        formControlName="reviews"
+        [(ngModel)]="productDetails.reviews"
+      >
+        <option selected value="">Choose...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+  <img class="card-img-top img-fluid" src="{{productDetails.productImg}}" alt="" width="900" height="200">
+</div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="!updateProductForm.valid"
+  >
+    Update Product Details
+  </button>
+  <!-- <input type="submit" value="Add Product" [disabled]="!addProductForm.valid" /> -->
+</form>

@@ -63,11 +63,11 @@
     {
       "id": 7,
       "categoryId": 4,
-      "productName": "Suit Salwar",
+      "productName": "Suit Salwar New",
       "description": "Product description goes here",
       "rating": 2,
       "price": 2330,
-      "productImg": "http://localhost:4200/assets/7.jpg",
+      "productImg": "",
       "isAvailable": true,
       "color": "red",
       "reviews": 10
@@ -83,18 +83,6 @@
       "isAvailable": true,
       "color": "red",
       "reviews": 10
-    },
-    {
-      "id": "11",
-      "categoryId": "2",
-      "productName": "test1",
-      "description": "test 1",
-      "rating": "1",
-      "price": "10",
-      "productImg": "",
-      "isAvailable": "1",
-      "color": "black",
-      "reviews": "1"
     }
   ],
   "categories": [
